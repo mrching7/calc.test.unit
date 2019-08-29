@@ -10,16 +10,33 @@ namespace calc.test.unit
     [TestFixture]
     public class CalcTest
     {
+        private Calc _uut;
+
+        [SetUp]
+        public void setup()
+        {
+            _uut = new Calc();
+        }
         //testing 
         [Test]
         public void Add_double()
         {
             //arrange
-            var uut= new Calc();
+            //var uut= new Calc();
             //act
-            uut.Add(2, 2);
+            _uut.Add(2, 2);
             //assert
-            Assert.That(uut.Add(2,2), Is.EqualTo(5));
+            Assert.That(_uut.Add(2,2), Is.EqualTo(4));
+        }
+        [Test]
+        public void Divide_By_Zero()
+        {
+            //arrange
+            //var uut= new Calc();
+            //act
+            _uut.Divide(2, 0);
+            //assert
+            Assert.Throws<Exception>(() => _uut.Divide(0, 2));
         }
 
 

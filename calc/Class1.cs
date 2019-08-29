@@ -24,5 +24,17 @@ namespace calc
         {
             return Math.Pow(a,b);
         }
+        public double Divide(double a, double b)
+        {
+            if (a == 0 && b == 0)
+            {
+                throw new Exception();
+            }
+
+            return a / b;
+
+
+        }
+
     }
 }
